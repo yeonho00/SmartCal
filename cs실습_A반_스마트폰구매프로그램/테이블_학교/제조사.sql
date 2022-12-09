@@ -1,0 +1,68 @@
+--------------------------------------------------------
+--  파일이 생성됨 - 목요일-12월-19-2019   
+--------------------------------------------------------
+-- 내부 생성기를 시도하는 DBMS_METADATA로 SCAL.제조사 객체에 대한 TABLE DDL을 렌더링할 수 없습니다.
+CREATE TABLE 제조사 
+(
+  제조사번호 VARCHAR2(5 BYTE) NOT NULL 
+, 제조사이름 VARCHAR2(20 BYTE) 
+) 
+LOGGING 
+TABLESPACE SYSTEM 
+PCTFREE 10 
+PCTUSED 40 
+INITRANS 1 
+STORAGE 
+( 
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1 
+  MAXEXTENTS UNLIMITED 
+  FREELISTS 1 
+  FREELIST GROUPS 1 
+  BUFFER_POOL DEFAULT 
+) 
+NOPARALLELCREATE UNIQUE INDEX 제조사_PK1 ON 제조사 (제조사번호 ASC) 
+LOGGING 
+TABLESPACE SYSTEM 
+PCTFREE 10 
+INITRANS 2 
+STORAGE 
+( 
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1 
+  MAXEXTENTS UNLIMITED 
+  FREELISTS 1 
+  FREELIST GROUPS 1 
+  BUFFER_POOL DEFAULT 
+) 
+NOPARALLELALTER TABLE 제조사
+ADD CONSTRAINT 제조사_PK PRIMARY KEY 
+(
+  제조사번호 
+)
+USING INDEX 제조사_PK1
+ENABLE
+REM INSERTING into SCAL."제조사"
+SET DEFINE OFF;
+Insert into SCAL."제조사" ("제조사번호","제조사이름") values ('0001','SAMSUNG');
+Insert into SCAL."제조사" ("제조사번호","제조사이름") values ('0002','Apple');
+Insert into SCAL."제조사" ("제조사번호","제조사이름") values ('0003','LG');
+-- 내부 생성기를 시도하는 DBMS_METADATA로 SCAL.제조사_PK1 객체에 대한 INDEX DDL을 렌더링할 수 없습니다.
+CREATE UNIQUE INDEX 제조사_PK1 ON 제조사 (제조사번호 ASC) 
+LOGGING 
+TABLESPACE SYSTEM 
+PCTFREE 10 
+INITRANS 2 
+STORAGE 
+( 
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1 
+  MAXEXTENTS UNLIMITED 
+  FREELISTS 1 
+  FREELIST GROUPS 1 
+  BUFFER_POOL DEFAULT 
+) 
+NOPARALLEL
